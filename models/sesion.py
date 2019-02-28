@@ -6,8 +6,8 @@ class sesion(models.Model):
     _name = 'cinemateca.sesion'
     precio = fields.Integer(string="precio", help="precio de la pelicula")
     asistencia = fields.Integer(string="asistencia", help="numero de espectadores")
-    #coche_ids = fields.One2many("res.partner", "taller_id", string="coches")
-    #mecanico_ids = fields.One2many("base.entidad", "taller_id", string="mecanicos")
+    pelicula_ids = fields.Many2one("cinemateca.pelicula", string="pelicula")
+    salaCine_ids = fields.Many2one("cinemateca.salaCine", string="pelicula")
 
 
    

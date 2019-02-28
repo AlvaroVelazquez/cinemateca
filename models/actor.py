@@ -6,7 +6,7 @@ class actor(models.Model):
     name = fields.Char(string="name", required=True, help="Nombre del actor")
     rol = fields.Char(string="rol", help="Nombre del rol")
     cache = fields.Integer(string="cache")
-   # pelicula_id = fields.Many2one("cinemateca.peliculas", string="pelicula")
+    pelicula_id = fields.Many2one("cinemateca.pelicula", string="pelicula")
 
 
    
