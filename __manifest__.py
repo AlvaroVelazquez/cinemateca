@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "taller1",
+    'name': "cinemateca",
 
     'summary': """
         modulo base""",
 
     'description': """
-        Modulo para aprender (taller)
+        Modulo para repasar
     """,
 
     'author': "Alberto Pasamar, Alejandro Lahoz, Hector Lagier, Alvaro Velázquez, Javier Inés, Ignacio Lou",
