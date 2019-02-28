@@ -1,7 +1,6 @@
 from odoo import models,fields, api
 
 class director(models.Model):
-    #Extension
     _inherit = 'base.entidad'
     _name = 'cinemateca.director'
     name = fields.Char(string="name", required=True, help="Nombre del director")
