@@ -3,120 +3,33 @@
     <data>
 
 
-        <!--COCHE-->
-
-        <record model="ir.actions.act_window" id="action_coche">
-            <field name="name">coche</field>
-            <field name="res_model">res.partner</field>
-            <field name="view_mode">tree,form</field>
-        </record>
-
-        <record model='ir.ui.view' id='coche_tree_view'>
-            <field name="name">coche.tree</field>
-            <field name="model">res.partner</field>
-            <field name="arch" type="xml">
-                <tree string="Coche Tree">
-                    <field name="name"/>
-                    <field name="marca"/>
-                    <field name="modelo"/>
-                    <field name="fechaEntrada"/>
-                    <field name="fechaSalida"/>
-                    <field name="tiempo"/>
-
-                </tree>
-            </field>
-        </record>
-
-        <record model='ir.ui.view' id='coche_form_view'>
-            <field name="name">coche.tree</field>
-            <field name="model">res.partner</field>
-            <field name="inherit_id" ref="base.view_partner_form"/>
-            <field name="arch" type="xml">
-                <notebook position="inside">
-                    <page string="Coches">
-                        <header>
-                            <button string="Generate name" type="object" name="generate_record_name" class="oe_highlight"/>
-                        </header>
-                        <group>
-                            <field name="name"/>
-                            <field name="marca"/>
-                            <field name="modelo"/>
-                            <field name="phone"/>
-                            <field name="fechaEntrada"/>
-                            <field name="fechaSalida"/>
-                        </group>
-                    </page>
-                </notebook>
-            </field>
-        </record>
-
-        <!--TALLER-->
-
-        <record model="ir.actions.act_window" id="action_taller">
-            <field name="name">taller</field>
-            <field name="res_model">taller1.taller</field>
-            <field name="view_mode">tree,form</field>
-        </record>
-
-        <record model='ir.ui.view' id='taller_tree_view'>
-            <field name="name">taller.tree</field>
-            <field name="model">taller1.taller</field>
-            <field name="arch" type="xml">
-                <tree string="Taller Tree">
-                    <field name="nombreEmpresa"/>
-                    <field name="direccion"/>
-                </tree>
-            </field>
-        </record>
-
-        <record model='ir.ui.view' id='taller_form_view'>
-            <field name="name">taller.form</field>
-            <field name="model">taller1.taller</field>
-            <field name="arch" type="xml">
-                <form string="Taller Form">
-                    <group>
-                        <field name="nombreEmpresa"/>
-                        <field name="direccion"/>
-                    </group>
-                </form>
-            </field>
-        </record>
-
-        <record model="ir.ui.view" id="taller_search_view">
-            <field name="name">taller.search</field>
-            <field name="model">taller1.taller</field>
-            <field name="arch" type="xml">
-                <search>
-                    <field name="nombreEmpresa"/>
-                    <field name="direccion"/>
-                </search>
-            </field>
-        </record>
-
-
-        <!--MECANICO-->
-
-        <record model="ir.actions.act_window" id="action_mecanico">
-            <field name="name">mecanico</field>
+        <!--ACTOR-->
+        <record model="ir.actions.act_window" id="action_actor">
+            <field name="name">actor</field>
             <field name="res_model">base.entidad</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
         </record>
 
-        <record model='ir.ui.view' id='mecanico_tree_view'>
-            <field name="name">mecanico.tree</field>
+        <record model='ir.ui.view' id='actor_tree_view'>
+            <field name="name">actor.tree</field>
             <field name="model">base.entidad</field>
             <field name="arch" type="xml">
-                <tree string="Mecanico Tree">
+                <tree string="Actor Tree">
                     <field name="nombreEntidad"/>
-                     <field name="seguro"/>
-                    <field name="taller_id"/>
+                    <field name="name"/>
+                    <field name="rol"/>
+                    <field name="cache"/>
+                    <field name="cache"/>
+                    <field name="pelicula_id"/>
+                    
+
                 </tree>
             </field>
         </record>
 
-        <record model='ir.ui.view' id='mecanico_form_view'>
-            <field name="name">mecanico.form</field>
+        <record model='ir.ui.view' id='actor_form_view'>
+            <field name="name">actor.form</field>
             <field name="model">base.entidad</field>
             <!--ref es el id de la vista en baseModule-->
             <field name="inherit_id" ref="baseModule.entidad_form_view"/>
@@ -124,14 +37,129 @@
                 <field name="nombreEntidad" position="after">
                     <group>
                         <field name="nombreEntidad"/>
-                        <field name="apellidos"/>
-                        <field name="seguro"/>
-                        <field name="pais_id"/>
-                        <field name="taller_id"/>
+                        <field name="name"/>
+                        <field name="rol"/>
+                        <field name="cache"/>
+                        <field name="cache"/>
+                        <field name="pelicula_id"/>
                     </group>
                 </field>
             </field>
         </record>
+
+         <!--DIRECTOR-->
+        <record model="ir.actions.act_window" id="action_director">
+            <field name="name">director</field>
+            <field name="res_model">base.entidad</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model='ir.ui.view' id='director_tree_view'>
+            <field name="name">director.tree</field>
+            <field name="model">base.entidad</field>
+            <field name="arch" type="xml">
+                <tree string="Director Tree">
+                    <field name="nombreEntidad"/>
+                    <field name="name"/>
+                    <field name="apellidos"/>
+                    <field name="pelicula_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model='ir.ui.view' id='director_form_view'>
+            <field name="name">actor.form</field>
+            <field name="model">base.entidad</field>
+            <!--ref es el id de la vista en baseModule-->
+            <field name="inherit_id" ref="baseModule.entidad_form_view"/>
+            <field name="arch" type="xml">
+                <field name="nombreEntidad" position="after">
+                    <group>
+                        <field name="nombreEntidad"/>
+                        <field name="name"/>
+                        <field name="apellidos"/>
+                        <field name="pelicula_id"/>
+                    </group>
+                </field>
+            </field>
+        </record>
+
+        <!--PELICULA-->
+        <record model="ir.actions.act_window" id="action_pelicula">
+            <field name="name">pelicula</field>
+            <field name="res_model">cinemateca.pelicula</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model='ir.ui.view' id='pelicula_tree_view'>
+            <field name="name">pelicula.tree</field>
+            <field name="model">cinemateca.pelicula</field>
+            <field name="arch" type="xml">
+                <tree string="Pelicula Tree">
+                    <field name="title"/>
+                    <field name="recaudacion"/>
+                    <field name="salaCine_ids"/>
+                    <field name="director_id"/>
+                    <field name="actor_ids"/>
+                    <field name="sesion_ids"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model='ir.ui.view' id='pelicula_form_view'>
+            <field name="name">pelicula.form</field>
+            <field name="model">cinemateca.pelicula</field>
+            <field name="arch" type="xml">
+                    <group>
+                    <field name="title"/>
+                    <field name="recaudacion"/>
+                    <field name="salaCine_ids"/>
+                    <field name="director_id"/>
+                    <field name="actor_ids"/>
+                    <field name="sesion_ids"/>
+                    </group>
+                </field>
+            </field>
+        </record>
+
+        <!--SALACINE-->
+        <record model="ir.actions.act_window" id="action_salaCine">
+            <field name="name">salaCine</field>
+            <field name="res_model">base.empresa</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model='ir.ui.view' id='salaCine_tree_view'>
+            <field name="name">salaCine.tree</field>
+            <field name="model">base.empresa</field>
+            <field name="arch" type="xml">
+                <tree string="salaCine Tree">
+                    <field name="nombreEmpresa"/>
+                    <field name="pelicula_id"/>
+                    <field name="sesion_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model='ir.ui.view' id='salaCine_form_view'>
+            <field name="name">salaCine.form</field>
+            <field name="model">base.empresa</field>
+             <!--ref es el id de la vista en baseModule-->
+            <field name="inherit_id" ref="baseEmpresa.entidad_form_view"/>
+            <field name="arch" type="xml">
+                    <group>
+                    <field name="nombreEmpresa"/>
+                    <field name="pelicula_id"/>
+                    <field name="sesion_id"/>
+                    </group>
+                </field>
+            </field>
+        </record>
+
+       
 
 
         <!-- Top menu item -->
@@ -144,9 +172,10 @@
 
         <!-- actions -->
 
-        <menuitem name="coche" id="menu_coche" parent="menu" action="action_coche"/>
-        <menuitem name="taller" id="menu_taller" parent="menu" action="action_taller"/>
-        <menuitem name="mecanico" id="menu_mecanico" parent="menu" action="action_mecanico"/>
+        <menuitem name="actor" id="menu_actor" parent="menu" action="action_actor"/>
+        <menuitem name="director" id="menu_director" parent="menu" action="action_director"/>
+        <menuitem name="pelicula" id="menu_pelicula" parent="menu" action="action_pelicula"/>
+        <menuitem name="salaCine" id="menu_salaCine" parent="menu" action="action_salaCine"/>
 
     </data>
 
