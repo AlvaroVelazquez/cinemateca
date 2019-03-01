@@ -13,7 +13,8 @@ class sesion(models.Model):
 
     @api.depends('recaudacion')
     def sumar(self):
-        self.recaudacion = self.asistencia * self.precio
+        for record in self:
+            record.recaudacion = record.asistencia * record.precio
 
 
             
