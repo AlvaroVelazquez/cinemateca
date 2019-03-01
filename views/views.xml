@@ -20,7 +20,7 @@
                     <field name="rol"/>
                     <field name="cache"/>
                     <field name="pelicula_id"/>
-                    
+
 
                 </tree>
             </field>
@@ -33,17 +33,17 @@
             <field name="inherit_id" ref="baseModule.entidad_form_view"/>
             <field name="arch" type="xml">
                 <field name="nombreEntidad" position="after">
-                        <group>
-                            <field name="name"/>
-                            <field name="rol"/>
-                            <field name="cache"/>
-                            <field name="pelicula_id"/>
-                        </group>
+                    <group>
+                        <field name="name"/>
+                        <field name="rol"/>
+                        <field name="cache"/>
+                        <field name="pelicula_id"/>
+                    </group>
                 </field>
             </field>
         </record>
 
-         <!--DIRECTOR-->
+        <!--DIRECTOR-->
         <record model="ir.actions.act_window" id="action_director">
             <field name="name">director</field>
             <field name="res_model">cinemateca.director</field>
@@ -68,14 +68,14 @@
             <field name="name">director.form</field>
             <field name="model">cinemateca.director</field>
             <field name="arch" type="xml">
-            <form string="Director Form">
+                <form string="Director Form">
                     <group>
                         <field name="nombreEntidad"/>
                         <field name="name"/>
                         <field name="apellidos"/>
                         <field name="pelicula_ids"/>
                     </group>
-            </form>
+                </form>
             </field>
         </record>
 
@@ -93,6 +93,7 @@
             <field name="arch" type="xml">
                 <tree string="Pelicula Tree">
                     <field name="title"/>
+                    <field name="genero"/>
                     <field name="salaCine_ids"/>
                     <field name="director_id"/>
                     <field name="actor_ids"/>
@@ -105,15 +106,27 @@
             <field name="name">pelicula.form</field>
             <field name="model">cinemateca.pelicula</field>
             <field name="arch" type="xml">
-            <form string="Pelicula Form">
+                <form string="Pelicula Form">
                     <group>
                         <field name="title"/>
+                        <field name="genero"/>
                         <field name="salaCine_ids"/>
                         <field name="director_id"/>
                         <field name="actor_ids"/>
                         <field name="sesion_ids"/>
                     </group>
-            </form>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="pelicula_search_view">
+            <field name="name">pelicula.search</field>
+            <field name="model">cinemateca.pelicula</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="title"/>
+                    <field name="genero"/>
+                </search>
             </field>
         </record>
 
@@ -139,7 +152,7 @@
         <record model='ir.ui.view' id='salaCine_form_view'>
             <field name="name">salaCine.form</field>
             <field name="model">base.empresa</field>
-             <!--ref es el id de la vista en baseModule-->
+            <!--ref es el id de la vista en baseModule-->
             <field name="inherit_id" ref="baseModule.empresa_form_view"/>
             <field name="arch" type="xml">
                 <field name="nombreEmpresa" position="after">
@@ -151,7 +164,7 @@
             </field>
         </record>
 
-       
+
 
 
         <!-- Top menu item -->
