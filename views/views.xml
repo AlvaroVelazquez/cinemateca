@@ -16,7 +16,6 @@
             <field name="model">base.entidad</field>
             <field name="arch" type="xml">
                 <tree string="Actor Tree">
-                    <field name="nombreEntidad"/>
                     <field name="name"/>
                     <field name="rol"/>
                     <field name="cache"/>
@@ -35,7 +34,6 @@
             <field name="arch" type="xml">
                 <field name="nombreEntidad" position="after">
                         <group>
-                            <field name="nombreEntidad"/>
                             <field name="name"/>
                             <field name="rol"/>
                             <field name="cache"/>
@@ -95,7 +93,6 @@
             <field name="arch" type="xml">
                 <tree string="Pelicula Tree">
                     <field name="title"/>
-                    <field name="recaudacion"/>
                     <field name="salaCine_ids"/>
                     <field name="director_id"/>
                     <field name="actor_ids"/>
