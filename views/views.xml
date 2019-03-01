@@ -108,7 +108,6 @@
             <form string="Pelicula Form">
                     <group>
                         <field name="title"/>
-                        <field name="recaudacion"/>
                         <field name="salaCine_ids"/>
                         <field name="director_id"/>
                         <field name="actor_ids"/>
