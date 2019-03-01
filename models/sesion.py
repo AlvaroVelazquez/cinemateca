@@ -11,10 +11,9 @@ class sesion(models.Model):
     salaCine_id = fields.Many2one("base.empresa", string="pelicula")
 
 
-    @api.depends('recaudacion')
+    @api.onchange('asistencia', 'precio')
     def sumar(self):
-        for record in self:
-            record.recaudacion = record.asistencia * record.precio
+            self.recaudacion = self.asistencia * self.precio
 
 
             
